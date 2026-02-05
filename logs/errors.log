@@ -1,0 +1,232 @@
+2026-02-05 01:50:34 | ERROR    | tools.ocr_tool:__init__:26 - Failed to initialize OCR engine: Unknown argument: show_log
+2026-02-05 01:53:40 | ERROR    | tools.ocr_tool:__init__:26 - Failed to initialize OCR engine: Unknown argument: show_log
+2026-02-05 02:07:54 | ERROR    | tools.damage_detection_client:analyze_damage:52 - HTTP error calling damage detection API: Client error '404 Not Found' for url 'http://127.0.0.1:8000/detect'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-05 02:07:54 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: Client error '404 Not Found' for url 'http://127.0.0.1:8000/detect'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-05 02:07:56 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:07:56 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:07:56 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:07:56 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:07:56 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:07:56 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:08:32 | ERROR    | tools.damage_detection_client:analyze_damage:58 - Damage detection failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.damage_type
+  Input should be 'dent', 'scratch', 'crack', 'broken' or 'missing' [type=enum, input_value='bumper_damage', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/enum
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.damage_type
+  Input should be 'dent', 'scratch', 'crack', 'broken' or 'missing' [type=enum, input_value='bumper_damage', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/enum
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:08:32 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:08:32 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:08:32 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:11:50 | ERROR    | tools.damage_detection_client:analyze_damage:58 - Damage detection failed: 7 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:11:50 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: 7 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:11:51 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:11:51 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:11:51 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:11:51 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:11:51 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:11:51 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:16:23 | ERROR    | tools.damage_detection_client:analyze_damage:75 - Damage detection failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box.x
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.y
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.width
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.height
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.x
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.y
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.width
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.height
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:16:23 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box.x
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.y
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.width
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.height
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.x
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.y
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.width
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.height
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:16:24 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:16:24 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:16:24 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:16:24 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:16:24 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:16:24 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:17:26 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:17:26 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:17:26 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:policy_validation_node:145 - Missing required data for policy validation
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:decision_node:201 - Decision node failed: 1 validation error for InvoiceData
+confidence
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:explanation_node:238 - Explanation node failed: 4 validation errors for DecisionOutput
+decision
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+reason
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+estimated_payout
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:35:56 | ERROR    | tools.ocr_tool:extract_from_pdf:154 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:35:56 | ERROR    | agents.ocr_structuring_agent:process:102 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:35:56 | ERROR    | agents.claim_nlp_agent:process:72 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:35:56 | ERROR    | agents.decision_agent:process:112 - Decision making failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "decision"\'}.  Expected: [\'\\n  "decision"\', \'claim_info\', \'damage_analysis\', \'invoice_data\', \'policy_validation\'] Received: [\'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "decision"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:35:56 | ERROR    | agents.explanation_agent:process:108 - Explanation generation failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "customer_explanation"\'}.  Expected: [\'\\n  "customer_explanation"\', \'claim_info\', \'damage_analysis\', \'decision\', \'invoice_data\', \'policy_validation\'] Received: [\'decision\', \'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "customer_explanation"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "customer_explanation"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:39:06 | ERROR    | tools.ocr_tool:extract_from_pdf:154 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:39:06 | ERROR    | agents.ocr_structuring_agent:process:102 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:39:06 | ERROR    | agents.claim_nlp_agent:process:72 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:39:06 | ERROR    | agents.decision_agent:process:113 - Decision making failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "decision"\'}.  Expected: [\'\\n  "decision"\', \'claim_info\', \'damage_analysis\', \'invoice_data\', \'policy_validation\'] Received: [\'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "decision"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:39:06 | ERROR    | agents.explanation_agent:process:108 - Explanation generation failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "customer_explanation"\'}.  Expected: [\'\\n  "customer_explanation"\', \'claim_info\', \'damage_analysis\', \'decision\', \'invoice_data\', \'policy_validation\'] Received: [\'decision\', \'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "customer_explanation"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "customer_explanation"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:42:53 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:42:53 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:45:05 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:45:05 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:47:40 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:47:40 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:31 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:31 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:36 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:36 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:43 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:43 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:49:42 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:49:42 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:50:59 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:50:59 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:51:47 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: Unable to get page count.
+I/O Error: Couldn't open file 'sample_data/invoice.pdf': No such file or directory.
+
+2026-02-05 02:54:40 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:54:40 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:56:43 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:56:43 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 03:00:20 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 03:00:20 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'

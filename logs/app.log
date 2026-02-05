@@ -1,0 +1,1127 @@
+2026-02-05 01:50:34 | ERROR    | tools.ocr_tool:__init__:26 - Failed to initialize OCR engine: Unknown argument: show_log
+2026-02-05 01:53:40 | ERROR    | tools.ocr_tool:__init__:26 - Failed to initialize OCR engine: Unknown argument: show_log
+2026-02-05 01:55:13 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 01:55:13 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 01:55:13 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 01:55:13 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 01:55:13 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 01:55:13 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 01:55:13 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 01:55:13 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 01:55:13 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 01:55:13 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:03:12 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:03:12 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:03:12 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:03:12 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:03:12 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:03:12 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:03:12 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:03:12 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:03:12 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:03:12 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:07:54 | INFO     | api.main:process_claim:146 - Processing claim 8b5a9513-ff2d-4fae-9dd6-f145df9ea53f
+2026-02-05 02:07:54 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/8b5a9513-ff2d-4fae-9dd6-f145df9ea53f_vehicle.jpg
+2026-02-05 02:07:54 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/8b5a9513-ff2d-4fae-9dd6-f145df9ea53f_invoice.pdf
+2026-02-05 02:07:54 | INFO     | api.main:process_claim:203 - Executing claim processing graph for 8b5a9513-ff2d-4fae-9dd6-f145df9ea53f
+2026-02-05 02:07:54 | INFO     | graphs.claim_workflow:damage_analysis_node:60 - Executing damage_analysis_node
+2026-02-05 02:07:54 | INFO     | tools.damage_detection_client:analyze_damage:30 - Calling damage detection API for: /tmp/claim_uploads/8b5a9513-ff2d-4fae-9dd6-f145df9ea53f_vehicle.jpg
+2026-02-05 02:07:54 | ERROR    | tools.damage_detection_client:analyze_damage:52 - HTTP error calling damage detection API: Client error '404 Not Found' for url 'http://127.0.0.1:8000/detect'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-05 02:07:54 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: Client error '404 Not Found' for url 'http://127.0.0.1:8000/detect'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2026-02-05 02:07:54 | INFO     | graphs.claim_workflow:ocr_structuring_node:87 - Executing ocr_structuring_node
+2026-02-05 02:07:54 | INFO     | agents.ocr_structuring_agent:process:52 - Processing invoice: /tmp/claim_uploads/8b5a9513-ff2d-4fae-9dd6-f145df9ea53f_invoice.pdf
+2026-02-05 02:07:54 | INFO     | tools.ocr_tool:extract_from_pdf:93 - Converting PDF to images: /tmp/claim_uploads/8b5a9513-ff2d-4fae-9dd6-f145df9ea53f_invoice.pdf
+2026-02-05 02:07:56 | INFO     | tools.ocr_tool:extract_from_pdf:102 - Processing page 1/1
+2026-02-05 02:07:56 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:07:56 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:07:56 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:07:56 | INFO     | graphs.claim_workflow:claim_nlp_node:115 - Executing claim_nlp_node
+2026-02-05 02:07:56 | INFO     | agents.claim_nlp_agent:process:51 - Processing claim description with NLP
+2026-02-05 02:07:56 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:07:56 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:07:56 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:07:56 | INFO     | api.main:process_claim:231 - Claim 8b5a9513-ff2d-4fae-9dd6-f145df9ea53f processed successfully in 1.79s
+2026-02-05 02:08:31 | INFO     | api.main:process_claim:146 - Processing claim b2d267c9-104d-46ac-b4ae-32c870893573
+2026-02-05 02:08:31 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/b2d267c9-104d-46ac-b4ae-32c870893573_vehicle.jpg
+2026-02-05 02:08:31 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/b2d267c9-104d-46ac-b4ae-32c870893573_invoice.pdf
+2026-02-05 02:08:31 | INFO     | api.main:process_claim:203 - Executing claim processing graph for b2d267c9-104d-46ac-b4ae-32c870893573
+2026-02-05 02:08:31 | INFO     | graphs.claim_workflow:damage_analysis_node:60 - Executing damage_analysis_node
+2026-02-05 02:08:31 | INFO     | tools.damage_detection_client:analyze_damage:30 - Calling damage detection API for: /tmp/claim_uploads/b2d267c9-104d-46ac-b4ae-32c870893573_vehicle.jpg
+2026-02-05 02:08:32 | INFO     | tools.damage_detection_client:analyze_damage:46 - Damage detection completed: 0 damages found
+2026-02-05 02:08:32 | ERROR    | tools.damage_detection_client:analyze_damage:58 - Damage detection failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.damage_type
+  Input should be 'dent', 'scratch', 'crack', 'broken' or 'missing' [type=enum, input_value='bumper_damage', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/enum
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.damage_type
+  Input should be 'dent', 'scratch', 'crack', 'broken' or 'missing' [type=enum, input_value='bumper_damage', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/enum
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:08:32 | INFO     | graphs.claim_workflow:ocr_structuring_node:87 - Executing ocr_structuring_node
+2026-02-05 02:08:32 | INFO     | agents.ocr_structuring_agent:process:52 - Processing invoice: /tmp/claim_uploads/b2d267c9-104d-46ac-b4ae-32c870893573_invoice.pdf
+2026-02-05 02:08:32 | INFO     | tools.ocr_tool:extract_from_pdf:93 - Converting PDF to images: /tmp/claim_uploads/b2d267c9-104d-46ac-b4ae-32c870893573_invoice.pdf
+2026-02-05 02:08:32 | INFO     | tools.ocr_tool:extract_from_pdf:102 - Processing page 1/1
+2026-02-05 02:08:32 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:08:32 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:08:32 | INFO     | graphs.claim_workflow:claim_nlp_node:115 - Executing claim_nlp_node
+2026-02-05 02:08:32 | INFO     | agents.claim_nlp_agent:process:51 - Processing claim description with NLP
+2026-02-05 02:08:32 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:08:32 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:08:32 | INFO     | api.main:process_claim:231 - Claim b2d267c9-104d-46ac-b4ae-32c870893573 processed successfully in 0.78s
+2026-02-05 02:11:43 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:11:43 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:11:43 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:11:43 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:11:43 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:11:43 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:11:43 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:11:43 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:11:43 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:11:43 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:11:50 | INFO     | api.main:process_claim:146 - Processing claim 837fa63b-2944-47bc-92b8-8269cfb30c6c
+2026-02-05 02:11:50 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/837fa63b-2944-47bc-92b8-8269cfb30c6c_vehicle.jpg
+2026-02-05 02:11:50 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/837fa63b-2944-47bc-92b8-8269cfb30c6c_invoice.pdf
+2026-02-05 02:11:50 | INFO     | api.main:process_claim:203 - Executing claim processing graph for 837fa63b-2944-47bc-92b8-8269cfb30c6c
+2026-02-05 02:11:50 | INFO     | graphs.claim_workflow:damage_analysis_node:60 - Executing damage_analysis_node
+2026-02-05 02:11:50 | INFO     | tools.damage_detection_client:analyze_damage:30 - Calling damage detection API for: /tmp/claim_uploads/837fa63b-2944-47bc-92b8-8269cfb30c6c_vehicle.jpg
+2026-02-05 02:11:50 | INFO     | tools.damage_detection_client:analyze_damage:46 - Damage detection completed: 0 damages found
+2026-02-05 02:11:50 | ERROR    | tools.damage_detection_client:analyze_damage:58 - Damage detection failed: 7 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:11:50 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: 7 validation errors for DamageAnalysisOutput
+detections.0.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '... 'y2': 370.94384765625}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 582.7091064453125}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.2.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'bumper_d...2': 472.08319091796875}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.3.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'scratch'...y2': 607.5292358398438}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.4.bounding_box
+  Field required [type=missing, input_value={'damage_type': 'dent', '...2': 272.58099365234375}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+overall_severity
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+total_damages
+  Field required [type=missing, input_value={'detections': [{'damage_..._mode': 'rule_based_v1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:11:50 | INFO     | graphs.claim_workflow:ocr_structuring_node:87 - Executing ocr_structuring_node
+2026-02-05 02:11:50 | INFO     | agents.ocr_structuring_agent:process:52 - Processing invoice: /tmp/claim_uploads/837fa63b-2944-47bc-92b8-8269cfb30c6c_invoice.pdf
+2026-02-05 02:11:50 | INFO     | tools.ocr_tool:extract_from_pdf:93 - Converting PDF to images: /tmp/claim_uploads/837fa63b-2944-47bc-92b8-8269cfb30c6c_invoice.pdf
+2026-02-05 02:11:51 | INFO     | tools.ocr_tool:extract_from_pdf:102 - Processing page 1/1
+2026-02-05 02:11:51 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:11:51 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:11:51 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:11:51 | INFO     | graphs.claim_workflow:claim_nlp_node:115 - Executing claim_nlp_node
+2026-02-05 02:11:51 | INFO     | agents.claim_nlp_agent:process:51 - Processing claim description with NLP
+2026-02-05 02:11:51 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:11:51 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:11:51 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:11:51 | INFO     | api.main:process_claim:231 - Claim 837fa63b-2944-47bc-92b8-8269cfb30c6c processed successfully in 0.83s
+2026-02-05 02:12:44 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:12:44 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:12:44 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:12:44 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:12:44 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:12:44 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:12:44 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:12:44 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:12:44 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:12:44 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:15:02 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:15:02 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:15:02 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:15:02 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:15:02 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:15:02 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:15:02 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:15:02 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:15:02 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:15:02 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:15:16 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:15:16 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:15:16 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:15:16 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:15:16 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:15:16 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:15:16 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:15:16 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:15:16 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:15:16 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:16:23 | INFO     | api.main:process_claim:146 - Processing claim a7131581-d629-4d62-91ae-44b90ec44078
+2026-02-05 02:16:23 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/a7131581-d629-4d62-91ae-44b90ec44078_vehicle.jpg
+2026-02-05 02:16:23 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/a7131581-d629-4d62-91ae-44b90ec44078_invoice.pdf
+2026-02-05 02:16:23 | INFO     | api.main:process_claim:203 - Executing claim processing graph for a7131581-d629-4d62-91ae-44b90ec44078
+2026-02-05 02:16:23 | INFO     | graphs.claim_workflow:damage_analysis_node:60 - Executing damage_analysis_node
+2026-02-05 02:16:23 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/a7131581-d629-4d62-91ae-44b90ec44078_vehicle.jpg
+2026-02-05 02:16:23 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:16:23 | ERROR    | tools.damage_detection_client:analyze_damage:75 - Damage detection failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box.x
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.y
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.width
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.height
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.x
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.y
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.width
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.height
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:16:23 | ERROR    | graphs.claim_workflow:damage_analysis_node:76 - Damage analysis node failed: 8 validation errors for DamageAnalysisOutput
+detections.0.bounding_box.x
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.y
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.width
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.0.bounding_box.height
+  Field required [type=missing, input_value={'x1': 274.65191650390625...'y2': 531.7884521484375}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.x
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.y
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.width
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+detections.1.bounding_box.height
+  Field required [type=missing, input_value={'x1': 3.1283140182495117...'y2': 372.3200988769531}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:16:23 | INFO     | graphs.claim_workflow:ocr_structuring_node:87 - Executing ocr_structuring_node
+2026-02-05 02:16:23 | INFO     | agents.ocr_structuring_agent:process:52 - Processing invoice: /tmp/claim_uploads/a7131581-d629-4d62-91ae-44b90ec44078_invoice.pdf
+2026-02-05 02:16:23 | INFO     | tools.ocr_tool:extract_from_pdf:93 - Converting PDF to images: /tmp/claim_uploads/a7131581-d629-4d62-91ae-44b90ec44078_invoice.pdf
+2026-02-05 02:16:24 | INFO     | tools.ocr_tool:extract_from_pdf:102 - Processing page 1/1
+2026-02-05 02:16:24 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:16:24 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:16:24 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:16:24 | INFO     | graphs.claim_workflow:claim_nlp_node:115 - Executing claim_nlp_node
+2026-02-05 02:16:24 | INFO     | agents.claim_nlp_agent:process:51 - Processing claim description with NLP
+2026-02-05 02:16:24 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:16:24 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:16:24 | ERROR    | graphs.claim_workflow:should_continue_after_data_collection:257 - No data collected from any source, cannot proceed
+2026-02-05 02:16:24 | INFO     | api.main:process_claim:231 - Claim a7131581-d629-4d62-91ae-44b90ec44078 processed successfully in 0.94s
+2026-02-05 02:17:21 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:17:21 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:17:21 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:17:21 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:17:21 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:17:21 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:17:21 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:17:21 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:17:21 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:17:21 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:17:26 | INFO     | api.main:process_claim:146 - Processing claim 7f018934-6aad-4b21-beca-fbd35592ab1e
+2026-02-05 02:17:26 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/7f018934-6aad-4b21-beca-fbd35592ab1e_vehicle.jpg
+2026-02-05 02:17:26 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/7f018934-6aad-4b21-beca-fbd35592ab1e_invoice.pdf
+2026-02-05 02:17:26 | INFO     | api.main:process_claim:203 - Executing claim processing graph for 7f018934-6aad-4b21-beca-fbd35592ab1e
+2026-02-05 02:17:26 | INFO     | graphs.claim_workflow:damage_analysis_node:60 - Executing damage_analysis_node
+2026-02-05 02:17:26 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/7f018934-6aad-4b21-beca-fbd35592ab1e_vehicle.jpg
+2026-02-05 02:17:26 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:17:26 | INFO     | graphs.claim_workflow:damage_analysis_node:73 - Damage analysis complete: 2 damages found
+2026-02-05 02:17:26 | INFO     | graphs.claim_workflow:ocr_structuring_node:87 - Executing ocr_structuring_node
+2026-02-05 02:17:26 | INFO     | agents.ocr_structuring_agent:process:52 - Processing invoice: /tmp/claim_uploads/7f018934-6aad-4b21-beca-fbd35592ab1e_invoice.pdf
+2026-02-05 02:17:26 | INFO     | tools.ocr_tool:extract_from_pdf:93 - Converting PDF to images: /tmp/claim_uploads/7f018934-6aad-4b21-beca-fbd35592ab1e_invoice.pdf
+2026-02-05 02:17:26 | INFO     | tools.ocr_tool:extract_from_pdf:102 - Processing page 1/1
+2026-02-05 02:17:26 | ERROR    | tools.ocr_tool:extract_from_pdf:135 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:17:26 | ERROR    | agents.ocr_structuring_agent:process:93 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:ocr_structuring_node:104 - OCR structuring node failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:17:26 | INFO     | graphs.claim_workflow:claim_nlp_node:115 - Executing claim_nlp_node
+2026-02-05 02:17:26 | INFO     | agents.claim_nlp_agent:process:51 - Processing claim description with NLP
+2026-02-05 02:17:26 | ERROR    | agents.claim_nlp_agent:process:74 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:claim_nlp_node:126 - Claim NLP node failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:17:26 | INFO     | graphs.claim_workflow:policy_validation_node:137 - Executing policy_validation_node
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:policy_validation_node:145 - Missing required data for policy validation
+2026-02-05 02:17:26 | INFO     | graphs.claim_workflow:decision_node:175 - Executing decision_node
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:decision_node:201 - Decision node failed: 1 validation error for InvoiceData
+confidence
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:17:26 | INFO     | graphs.claim_workflow:explanation_node:214 - Executing explanation_node
+2026-02-05 02:17:26 | ERROR    | graphs.claim_workflow:explanation_node:238 - Explanation node failed: 4 validation errors for DecisionOutput
+decision
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+reason
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+estimated_payout
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+confidence
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2026-02-05 02:17:26 | INFO     | api.main:process_claim:231 - Claim 7f018934-6aad-4b21-beca-fbd35592ab1e processed successfully in 0.67s
+2026-02-05 02:18:07 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:18:07 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:18:07 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:18:07 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:18:07 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:18:07 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:18:07 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:18:07 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:18:07 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:18:07 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:18:47 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:18:47 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:18:47 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:18:47 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:18:47 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:18:47 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:18:47 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:18:47 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:18:47 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:18:47 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:18:58 | INFO     | api.main:process_claim:146 - Processing claim 0ca69ee5-b3d0-4b5e-adc6-b30bba66c533
+2026-02-05 02:18:58 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/0ca69ee5-b3d0-4b5e-adc6-b30bba66c533_vehicle.jpg
+2026-02-05 02:18:58 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/0ca69ee5-b3d0-4b5e-adc6-b30bba66c533_invoice.pdf
+2026-02-05 02:18:58 | INFO     | api.main:process_claim:203 - Executing claim processing graph for 0ca69ee5-b3d0-4b5e-adc6-b30bba66c533
+2026-02-05 02:18:58 | INFO     | graphs.claim_workflow:damage_analysis_node:60 - Executing damage_analysis_node
+2026-02-05 02:18:58 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/0ca69ee5-b3d0-4b5e-adc6-b30bba66c533_vehicle.jpg
+2026-02-05 02:18:58 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:18:58 | INFO     | graphs.claim_workflow:damage_analysis_node:73 - Damage analysis complete: 2 damages found
+2026-02-05 02:18:58 | INFO     | graphs.claim_workflow:ocr_structuring_node:87 - Executing ocr_structuring_node
+2026-02-05 02:18:58 | INFO     | agents.ocr_structuring_agent:process:52 - Processing invoice: /tmp/claim_uploads/0ca69ee5-b3d0-4b5e-adc6-b30bba66c533_invoice.pdf
+2026-02-05 02:18:58 | INFO     | tools.ocr_tool:extract_from_pdf:93 - Converting PDF to images: /tmp/claim_uploads/0ca69ee5-b3d0-4b5e-adc6-b30bba66c533_invoice.pdf
+2026-02-05 02:18:59 | INFO     | tools.ocr_tool:extract_from_pdf:102 - Processing page 1/1
+2026-02-05 02:19:53 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:19:54 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:19:54 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:19:54 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:19:54 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:19:54 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:19:54 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:19:54 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:19:54 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:19:54 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:33:17 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:33:18 | INFO     | agents.ocr_structuring_agent:__init__:39 - OCR Structuring Agent initialized
+2026-02-05 02:33:18 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:33:18 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:33:18 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:33:18 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:33:18 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:33:18 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:33:18 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:33:18 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:33:31 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:33:31 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:33:31 | INFO     | agents.claim_nlp_agent:__init__:38 - Claim NLP Agent initialized
+2026-02-05 02:33:31 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:33:31 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:33:31 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:33:31 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:33:31 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:33:31 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:33:31 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:33:56 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:33:56 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:33:56 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:33:56 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:33:56 | INFO     | agents.decision_agent:__init__:45 - Decision Agent initialized
+2026-02-05 02:33:56 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:33:56 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:33:56 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:33:56 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:33:56 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:34:23 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:34:24 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:34:24 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:34:24 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:34:24 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:34:24 | INFO     | agents.explanation_agent:__init__:45 - Explanation Agent initialized
+2026-02-05 02:34:24 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:34:24 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:34:24 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:34:24 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:34:48 | INFO     | tools.ocr_tool:__init__:23 - OCR engine initialized successfully
+2026-02-05 02:34:48 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:34:48 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:34:48 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:34:48 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:34:48 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:34:48 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:34:48 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:34:48 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:34:48 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:35:29 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:35:29 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:35:29 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:35:29 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:35:29 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:35:29 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:35:29 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:35:29 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:35:29 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:35:29 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:35:34 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:35:34 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:35:34 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:35:34 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:35:35 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:35:35 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:35:35 | INFO     | graphs.claim_workflow:create_claim_processing_graph:308 - Claim processing graph compiled successfully
+2026-02-05 02:35:35 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:35:35 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:35:35 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:35:54 | INFO     | api.main:process_claim:146 - Processing claim e27031cd-d9f6-4d78-a0a8-a697c9494934
+2026-02-05 02:35:54 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/e27031cd-d9f6-4d78-a0a8-a697c9494934_vehicle.jpg
+2026-02-05 02:35:54 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/e27031cd-d9f6-4d78-a0a8-a697c9494934_invoice.pdf
+2026-02-05 02:35:54 | INFO     | api.main:process_claim:203 - Executing claim processing graph for e27031cd-d9f6-4d78-a0a8-a697c9494934
+2026-02-05 02:35:54 | INFO     | graphs.claim_workflow:damage_analysis_node:60 - Executing damage_analysis_node
+2026-02-05 02:35:54 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/e27031cd-d9f6-4d78-a0a8-a697c9494934_vehicle.jpg
+2026-02-05 02:35:55 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:35:55 | INFO     | graphs.claim_workflow:damage_analysis_node:73 - Damage analysis complete: 2 damages found
+2026-02-05 02:35:55 | INFO     | graphs.claim_workflow:ocr_structuring_node:87 - Executing ocr_structuring_node
+2026-02-05 02:35:55 | INFO     | agents.ocr_structuring_agent:process:59 - Processing invoice: /tmp/claim_uploads/e27031cd-d9f6-4d78-a0a8-a697c9494934_invoice.pdf
+2026-02-05 02:35:55 | INFO     | tools.ocr_tool:extract_from_pdf:106 - Converting PDF to images: /tmp/claim_uploads/e27031cd-d9f6-4d78-a0a8-a697c9494934_invoice.pdf
+2026-02-05 02:35:56 | INFO     | tools.ocr_tool:extract_from_pdf:119 - Processing page 1/1
+2026-02-05 02:35:56 | ERROR    | tools.ocr_tool:extract_from_pdf:154 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:35:56 | ERROR    | agents.ocr_structuring_agent:process:102 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:ocr_structuring_node:101 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:claim_nlp_node:115 - Executing claim_nlp_node
+2026-02-05 02:35:56 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:35:56 | ERROR    | agents.claim_nlp_agent:process:72 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:claim_nlp_node:123 - Claim parsed: Type IncidentType.OTHER
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:policy_validation_node:137 - Executing policy_validation_node
+2026-02-05 02:35:56 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:35:56 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:35:56 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:policy_validation_node:161 - Policy validation complete: Covered=True
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:decision_node:175 - Executing decision_node
+2026-02-05 02:35:56 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:35:56 | ERROR    | agents.decision_agent:process:112 - Decision making failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "decision"\'}.  Expected: [\'\\n  "decision"\', \'claim_info\', \'damage_analysis\', \'invoice_data\', \'policy_validation\'] Received: [\'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "decision"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:decision_node:198 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:explanation_node:214 - Executing explanation_node
+2026-02-05 02:35:56 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:35:56 | ERROR    | agents.explanation_agent:process:108 - Explanation generation failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "customer_explanation"\'}.  Expected: [\'\\n  "customer_explanation"\', \'claim_info\', \'damage_analysis\', \'decision\', \'invoice_data\', \'policy_validation\'] Received: [\'decision\', \'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "customer_explanation"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "customer_explanation"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:35:56 | INFO     | graphs.claim_workflow:explanation_node:235 - Explanations generated
+2026-02-05 02:35:56 | INFO     | api.main:process_claim:231 - Claim e27031cd-d9f6-4d78-a0a8-a697c9494934 processed successfully in 1.62s
+2026-02-05 02:36:07 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:36:07 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:36:07 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:36:07 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:36:07 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:36:07 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:36:07 | INFO     | graphs.claim_workflow:create_claim_processing_graph:368 - Claim processing graph compiled successfully
+2026-02-05 02:36:07 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:36:07 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:36:07 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:36:52 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:36:53 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:36:53 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:36:53 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:36:53 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:36:53 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:36:53 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:36:53 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:36:53 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:36:53 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:37:35 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:37:35 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:37:35 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:37:35 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:37:35 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:37:35 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:37:35 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:37:35 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:37:35 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:37:35 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:39:05 | INFO     | api.main:process_claim:146 - Processing claim 5d6277aa-c7d4-4300-bfa0-a4580e12459a
+2026-02-05 02:39:05 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/5d6277aa-c7d4-4300-bfa0-a4580e12459a_vehicle.jpg
+2026-02-05 02:39:05 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/5d6277aa-c7d4-4300-bfa0-a4580e12459a_invoice.pdf
+2026-02-05 02:39:05 | INFO     | api.main:process_claim:203 - Executing claim processing graph for 5d6277aa-c7d4-4300-bfa0-a4580e12459a
+2026-02-05 02:39:05 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:39:05 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/5d6277aa-c7d4-4300-bfa0-a4580e12459a_vehicle.jpg
+2026-02-05 02:39:05 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:39:05 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 2 damages found
+2026-02-05 02:39:05 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:39:05 | INFO     | agents.ocr_structuring_agent:process:59 - Processing invoice: /tmp/claim_uploads/5d6277aa-c7d4-4300-bfa0-a4580e12459a_invoice.pdf
+2026-02-05 02:39:05 | INFO     | tools.ocr_tool:extract_from_pdf:106 - Converting PDF to images: /tmp/claim_uploads/5d6277aa-c7d4-4300-bfa0-a4580e12459a_invoice.pdf
+2026-02-05 02:39:06 | INFO     | tools.ocr_tool:extract_from_pdf:119 - Processing page 1/1
+2026-02-05 02:39:06 | ERROR    | tools.ocr_tool:extract_from_pdf:154 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:39:06 | ERROR    | agents.ocr_structuring_agent:process:102 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:39:06 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:39:06 | ERROR    | agents.claim_nlp_agent:process:72 - Claim NLP processing failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "incident_type"\'}.  Expected: [\'\\n  "incident_type"\', \'claim_description\'] Received: [\'claim_description\']\nNote: if you intended {\n  "incident_type"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "incident_type"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.OTHER
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:39:06 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:39:06 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:39:06 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:39:06 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:39:06 | ERROR    | agents.decision_agent:process:113 - Decision making failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "decision"\'}.  Expected: [\'\\n  "decision"\', \'claim_info\', \'damage_analysis\', \'invoice_data\', \'policy_validation\'] Received: [\'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "decision"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "decision"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:39:06 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:39:06 | ERROR    | agents.explanation_agent:process:108 - Explanation generation failed: 'Input to ChatPromptTemplate is missing variables {\'\\n  "customer_explanation"\'}.  Expected: [\'\\n  "customer_explanation"\', \'claim_info\', \'damage_analysis\', \'decision\', \'invoice_data\', \'policy_validation\'] Received: [\'decision\', \'damage_analysis\', \'invoice_data\', \'claim_info\', \'policy_validation\']\nNote: if you intended {\n  "customer_explanation"} to be part of the string and not a variable, please escape it with double curly braces like: \'{{\n  "customer_explanation"}}\'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT '
+2026-02-05 02:39:06 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:39:06 | INFO     | api.main:process_claim:231 - Claim 5d6277aa-c7d4-4300-bfa0-a4580e12459a processed successfully in 0.64s
+2026-02-05 02:41:33 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:41:33 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:41:33 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:41:33 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:41:33 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:41:33 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:41:33 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:41:33 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:41:33 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:41:33 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:41:39 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:41:39 | INFO     | agents.ocr_structuring_agent:__init__:46 - OCR Structuring Agent initialized
+2026-02-05 02:41:39 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:41:39 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:41:39 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:41:39 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:41:39 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:41:39 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:41:39 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:41:39 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:41:59 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:41:59 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:41:59 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:41:59 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:41:59 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:41:59 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:41:59 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:41:59 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:41:59 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:41:59 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:42:12 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:42:12 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:42:12 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:42:12 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:42:12 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:42:12 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:42:12 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:42:12 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:42:12 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:42:12 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:42:37 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:42:37 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:42:37 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:42:37 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:42:37 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:42:37 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:42:37 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:42:37 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:42:37 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:42:37 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:42:52 | INFO     | api.main:process_claim:146 - Processing claim e90d0016-639d-40d9-91f7-b6c00f62d404
+2026-02-05 02:42:52 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/e90d0016-639d-40d9-91f7-b6c00f62d404_vehicle.jpg
+2026-02-05 02:42:52 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/e90d0016-639d-40d9-91f7-b6c00f62d404_invoice.pdf
+2026-02-05 02:42:52 | INFO     | api.main:process_claim:203 - Executing claim processing graph for e90d0016-639d-40d9-91f7-b6c00f62d404
+2026-02-05 02:42:52 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:42:52 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/e90d0016-639d-40d9-91f7-b6c00f62d404_vehicle.jpg
+2026-02-05 02:42:52 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:42:52 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 2 damages found
+2026-02-05 02:42:52 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:42:52 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/e90d0016-639d-40d9-91f7-b6c00f62d404_invoice.pdf
+2026-02-05 02:42:52 | INFO     | tools.ocr_tool:extract_from_pdf:122 - Converting PDF to images: /tmp/claim_uploads/e90d0016-639d-40d9-91f7-b6c00f62d404_invoice.pdf
+2026-02-05 02:42:53 | INFO     | tools.ocr_tool:extract_from_pdf:135 - Processing page 1/1
+2026-02-05 02:42:53 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:42:53 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:42:53 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:42:53 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:42:53 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:42:53 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:42:53 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:42:53 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:42:53 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:42:53 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:42:53 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:42:53 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:42:53 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:42:53 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:42:54 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:42:54 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:42:54 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:42:54 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:42:55 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:42:55 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:42:55 | INFO     | api.main:process_claim:231 - Claim e90d0016-639d-40d9-91f7-b6c00f62d404 processed successfully in 2.98s
+2026-02-05 02:44:53 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:44:53 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:44:53 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:44:53 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:44:53 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:44:53 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:44:53 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:44:53 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:44:53 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:44:53 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:45:04 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:45:04 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:45:04 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:45:04 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:45:04 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:45:04 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:45:04 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:45:04 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:45:04 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:45:04 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:45:04 | INFO     | api.main:process_claim:147 - Processing claim 7b6198f5-8495-4e01-84f6-44d6508c0120
+2026-02-05 02:45:04 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/7b6198f5-8495-4e01-84f6-44d6508c0120_vehicle.jpg
+2026-02-05 02:45:04 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/7b6198f5-8495-4e01-84f6-44d6508c0120_invoice.pdf
+2026-02-05 02:45:04 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 7b6198f5-8495-4e01-84f6-44d6508c0120
+2026-02-05 02:45:04 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:45:04 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/7b6198f5-8495-4e01-84f6-44d6508c0120_vehicle.jpg
+2026-02-05 02:45:05 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:45:05 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 2 damages found
+2026-02-05 02:45:05 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:45:05 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/7b6198f5-8495-4e01-84f6-44d6508c0120_invoice.pdf
+2026-02-05 02:45:05 | INFO     | tools.ocr_tool:extract_from_pdf:122 - Converting PDF to images: /tmp/claim_uploads/7b6198f5-8495-4e01-84f6-44d6508c0120_invoice.pdf
+2026-02-05 02:45:05 | INFO     | tools.ocr_tool:extract_from_pdf:135 - Processing page 1/1
+2026-02-05 02:45:05 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:45:05 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:45:05 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:45:05 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:45:05 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:45:06 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:45:06 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:45:06 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:45:06 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:45:06 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:45:06 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:45:06 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:45:06 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:45:06 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:45:06 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:45:06 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:45:06 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:45:06 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:45:07 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:45:07 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:45:07 | INFO     | api.main:process_claim:234 - Claim 7b6198f5-8495-4e01-84f6-44d6508c0120 processed successfully in 3.06s
+2026-02-05 02:47:36 | INFO     | api.main:process_claim:147 - Processing claim 203fc4e1-e26a-464d-9ef5-992a46d3368f
+2026-02-05 02:47:36 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/203fc4e1-e26a-464d-9ef5-992a46d3368f_vehicle.jpg
+2026-02-05 02:47:36 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/203fc4e1-e26a-464d-9ef5-992a46d3368f_invoice.pdf
+2026-02-05 02:47:36 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 203fc4e1-e26a-464d-9ef5-992a46d3368f
+2026-02-05 02:47:36 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:47:36 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/203fc4e1-e26a-464d-9ef5-992a46d3368f_vehicle.jpg
+2026-02-05 02:47:36 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:47:36 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 2 damages found
+2026-02-05 02:47:36 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:47:36 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/203fc4e1-e26a-464d-9ef5-992a46d3368f_invoice.pdf
+2026-02-05 02:47:36 | INFO     | tools.ocr_tool:extract_from_pdf:122 - Converting PDF to images: /tmp/claim_uploads/203fc4e1-e26a-464d-9ef5-992a46d3368f_invoice.pdf
+2026-02-05 02:47:40 | INFO     | tools.ocr_tool:extract_from_pdf:135 - Processing page 1/1
+2026-02-05 02:47:40 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:47:40 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:47:40 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:47:40 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:47:40 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:47:41 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:47:41 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:47:41 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:47:41 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:47:41 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:47:41 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:47:41 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:47:41 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:47:41 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:47:41 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:47:41 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:47:41 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:47:41 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:47:42 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:47:42 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:47:42 | INFO     | api.main:process_claim:234 - Claim 203fc4e1-e26a-464d-9ef5-992a46d3368f processed successfully in 6.66s
+2026-02-05 02:48:31 | INFO     | api.main:process_claim:147 - Processing claim 2ffde97b-0301-46b1-b3ca-3fb63a248b91
+2026-02-05 02:48:31 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/2ffde97b-0301-46b1-b3ca-3fb63a248b91_vehicle.jpg
+2026-02-05 02:48:31 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/2ffde97b-0301-46b1-b3ca-3fb63a248b91_invoice.png
+2026-02-05 02:48:31 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 2ffde97b-0301-46b1-b3ca-3fb63a248b91
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:48:31 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/2ffde97b-0301-46b1-b3ca-3fb63a248b91_vehicle.jpg
+2026-02-05 02:48:31 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 2 damages found
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:48:31 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/2ffde97b-0301-46b1-b3ca-3fb63a248b91_invoice.png
+2026-02-05 02:48:31 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/2ffde97b-0301-46b1-b3ca-3fb63a248b91_invoice.png
+2026-02-05 02:48:31 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:31 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:48:31 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:48:31 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:48:31 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:48:31 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:48:31 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:48:31 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:48:31 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:48:32 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:48:32 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:48:32 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:48:32 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:48:33 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:48:33 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:48:33 | INFO     | api.main:process_claim:234 - Claim 2ffde97b-0301-46b1-b3ca-3fb63a248b91 processed successfully in 2.15s
+2026-02-05 02:48:35 | INFO     | api.main:process_claim:147 - Processing claim fcd70e56-eacc-4559-94fc-efaab64217ef
+2026-02-05 02:48:35 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/fcd70e56-eacc-4559-94fc-efaab64217ef_vehicle.jpg
+2026-02-05 02:48:35 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/fcd70e56-eacc-4559-94fc-efaab64217ef_invoice.png
+2026-02-05 02:48:35 | INFO     | api.main:process_claim:204 - Executing claim processing graph for fcd70e56-eacc-4559-94fc-efaab64217ef
+2026-02-05 02:48:35 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:48:35 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/fcd70e56-eacc-4559-94fc-efaab64217ef_vehicle.jpg
+2026-02-05 02:48:36 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 2 damages found
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:48:36 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/fcd70e56-eacc-4559-94fc-efaab64217ef_invoice.png
+2026-02-05 02:48:36 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/fcd70e56-eacc-4559-94fc-efaab64217ef_invoice.png
+2026-02-05 02:48:36 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:36 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:48:36 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:48:36 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:48:36 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:48:36 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:48:36 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:48:36 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:48:36 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:48:36 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:48:36 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:48:37 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:48:37 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:48:37 | INFO     | api.main:process_claim:234 - Claim fcd70e56-eacc-4559-94fc-efaab64217ef processed successfully in 1.68s
+2026-02-05 02:48:42 | INFO     | api.main:process_claim:147 - Processing claim 58bdc634-8a43-43ed-96d0-f464cb9c5a6f
+2026-02-05 02:48:42 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/58bdc634-8a43-43ed-96d0-f464cb9c5a6f_vehicle.jpg
+2026-02-05 02:48:42 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/58bdc634-8a43-43ed-96d0-f464cb9c5a6f_invoice.png
+2026-02-05 02:48:42 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 58bdc634-8a43-43ed-96d0-f464cb9c5a6f
+2026-02-05 02:48:42 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:48:42 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/58bdc634-8a43-43ed-96d0-f464cb9c5a6f_vehicle.jpg
+2026-02-05 02:48:43 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 2 damages found
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 2 damages found
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:48:43 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/58bdc634-8a43-43ed-96d0-f464cb9c5a6f_invoice.png
+2026-02-05 02:48:43 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/58bdc634-8a43-43ed-96d0-f464cb9c5a6f_invoice.png
+2026-02-05 02:48:43 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:43 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:48:43 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:48:43 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:48:43 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:48:43 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:48:43 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:48:43 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:48:43 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:48:43 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:48:43 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:48:44 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:48:44 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:48:44 | INFO     | api.main:process_claim:234 - Claim 58bdc634-8a43-43ed-96d0-f464cb9c5a6f processed successfully in 1.87s
+2026-02-05 02:49:42 | INFO     | api.main:process_claim:147 - Processing claim 56691212-3126-4ee7-85ed-35941d709275
+2026-02-05 02:49:42 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/56691212-3126-4ee7-85ed-35941d709275_vehicle.jpg
+2026-02-05 02:49:42 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/56691212-3126-4ee7-85ed-35941d709275_invoice.png
+2026-02-05 02:49:42 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 56691212-3126-4ee7-85ed-35941d709275
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:49:42 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/56691212-3126-4ee7-85ed-35941d709275_vehicle.jpg
+2026-02-05 02:49:42 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 3 damages found
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 3 damages found
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:49:42 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/56691212-3126-4ee7-85ed-35941d709275_invoice.png
+2026-02-05 02:49:42 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/56691212-3126-4ee7-85ed-35941d709275_invoice.png
+2026-02-05 02:49:42 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:49:42 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:49:42 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:49:42 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:49:42 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: DEFAULT
+2026-02-05 02:49:42 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:49:42 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:49:42 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:49:43 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:49:43 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:49:43 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:49:43 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:49:43 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:49:43 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:49:43 | INFO     | api.main:process_claim:234 - Claim 56691212-3126-4ee7-85ed-35941d709275 processed successfully in 1.85s
+2026-02-05 02:50:56 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:50:56 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:50:56 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:50:56 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:50:56 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:50:56 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:50:56 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:50:56 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:50:56 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:50:56 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:50:59 | INFO     | api.main:process_claim:147 - Processing claim 8e6eb6a7-4bf0-4670-93c2-255bdd91f48c
+2026-02-05 02:50:59 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/8e6eb6a7-4bf0-4670-93c2-255bdd91f48c_vehicle.jpg
+2026-02-05 02:50:59 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/8e6eb6a7-4bf0-4670-93c2-255bdd91f48c_invoice.png
+2026-02-05 02:50:59 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 8e6eb6a7-4bf0-4670-93c2-255bdd91f48c
+2026-02-05 02:50:59 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:50:59 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/8e6eb6a7-4bf0-4670-93c2-255bdd91f48c_vehicle.jpg
+2026-02-05 02:50:59 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 3 damages found
+2026-02-05 02:50:59 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 3 damages found
+2026-02-05 02:50:59 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:50:59 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/8e6eb6a7-4bf0-4670-93c2-255bdd91f48c_invoice.png
+2026-02-05 02:50:59 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/8e6eb6a7-4bf0-4670-93c2-255bdd91f48c_invoice.png
+2026-02-05 02:50:59 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:50:59 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:50:59 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:50:59 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:50:59 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:51:00 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:51:00 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:51:00 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:51:00 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: DEFAULT
+2026-02-05 02:51:00 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:51:00 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:51:00 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:51:00 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:51:00 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.40
+2026-02-05 02:51:00 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:51:00 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:51:00 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:51:01 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:51:01 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:51:01 | INFO     | api.main:process_claim:234 - Claim 8e6eb6a7-4bf0-4670-93c2-255bdd91f48c processed successfully in 2.31s
+2026-02-05 02:51:45 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:51:47 | INFO     | tools.ocr_tool:extract_from_pdf:122 - Converting PDF to images: sample_data/invoice.pdf
+2026-02-05 02:51:47 | ERROR    | tools.ocr_tool:extract_from_pdf:170 - PDF OCR extraction failed: Unable to get page count.
+I/O Error: Couldn't open file 'sample_data/invoice.pdf': No such file or directory.
+
+2026-02-05 02:52:10 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:52:10 | INFO     | tools.ocr_tool:extract_from_pdf:115 - Extracted text directly from PDF (no OCR needed)
+2026-02-05 02:54:20 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:54:20 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:54:20 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:54:20 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:54:20 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:54:20 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:54:20 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:54:20 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:54:20 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:54:20 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 02:54:23 | INFO     | api.main:process_claim:147 - Processing claim e0ae8f1c-d054-4264-9517-c250369b3e91
+2026-02-05 02:54:23 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/e0ae8f1c-d054-4264-9517-c250369b3e91_invoice.pdf
+2026-02-05 02:54:23 | INFO     | api.main:process_claim:204 - Executing claim processing graph for e0ae8f1c-d054-4264-9517-c250369b3e91
+2026-02-05 02:54:23 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:54:23 | WARNING  | graphs.claim_workflow:damage_analysis_node:123 - No vehicle image provided, skipping damage analysis
+2026-02-05 02:54:23 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:54:23 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/e0ae8f1c-d054-4264-9517-c250369b3e91_invoice.pdf
+2026-02-05 02:54:23 | INFO     | tools.ocr_tool:extract_from_pdf:115 - Extracted text directly from PDF (no OCR needed)
+2026-02-05 02:54:23 | INFO     | agents.ocr_structuring_agent:process:68 - OCR completed with confidence: 0.90
+2026-02-05 02:54:23 | INFO     | agents.ocr_structuring_agent:process:78 - Structuring OCR text with LLM
+2026-02-05 02:54:23 | INFO     | agents.ocr_structuring_agent:process:93 - Invoice structured successfully. Amount: 18880.0, Confidence: 0.90
+2026-02-05 02:54:23 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹18880.0, Confidence 0.90
+2026-02-05 02:54:23 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:54:23 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:54:24 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.OTHER
+2026-02-05 02:54:24 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.OTHER
+2026-02-05 02:54:24 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:54:24 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: DEFAULT
+2026-02-05 02:54:24 | INFO     | agents.policy_validation_agent:process:156 - Claim validated. Covered: True, Max payable: ₹13880.0
+2026-02-05 02:54:24 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:54:24 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:54:24 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:54:24 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REJECT with confidence 1.00
+2026-02-05 02:54:24 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REJECT
+2026-02-05 02:54:24 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:54:24 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:54:25 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:54:25 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:54:25 | INFO     | api.main:process_claim:234 - Claim e0ae8f1c-d054-4264-9517-c250369b3e91 processed successfully in 2.04s
+2026-02-05 02:54:40 | INFO     | api.main:process_claim:147 - Processing claim 50381ac0-cd62-4b12-9a3c-ec92086a3625
+2026-02-05 02:54:40 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/50381ac0-cd62-4b12-9a3c-ec92086a3625_vehicle.jpg
+2026-02-05 02:54:40 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/50381ac0-cd62-4b12-9a3c-ec92086a3625_invoice.png
+2026-02-05 02:54:40 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 50381ac0-cd62-4b12-9a3c-ec92086a3625
+2026-02-05 02:54:40 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:54:40 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/50381ac0-cd62-4b12-9a3c-ec92086a3625_vehicle.jpg
+2026-02-05 02:54:40 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 3 damages found
+2026-02-05 02:54:40 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 3 damages found
+2026-02-05 02:54:40 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:54:40 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/50381ac0-cd62-4b12-9a3c-ec92086a3625_invoice.png
+2026-02-05 02:54:40 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/50381ac0-cd62-4b12-9a3c-ec92086a3625_invoice.png
+2026-02-05 02:54:40 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:54:40 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:54:40 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:54:40 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:54:40 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:54:41 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:54:41 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:54:41 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:54:41 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: DEFAULT
+2026-02-05 02:54:41 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:54:41 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:54:41 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:54:41 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:54:41 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.60
+2026-02-05 02:54:41 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:54:41 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:54:41 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:54:42 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:54:42 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:54:42 | INFO     | api.main:process_claim:234 - Claim 50381ac0-cd62-4b12-9a3c-ec92086a3625 processed successfully in 2.33s
+2026-02-05 02:56:43 | INFO     | api.main:process_claim:147 - Processing claim 88c5a101-3a7f-4ea3-bc1e-395c719e5a16
+2026-02-05 02:56:43 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/88c5a101-3a7f-4ea3-bc1e-395c719e5a16_vehicle.jpg
+2026-02-05 02:56:43 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/88c5a101-3a7f-4ea3-bc1e-395c719e5a16_invoice.png
+2026-02-05 02:56:43 | INFO     | api.main:process_claim:204 - Executing claim processing graph for 88c5a101-3a7f-4ea3-bc1e-395c719e5a16
+2026-02-05 02:56:43 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 02:56:43 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/88c5a101-3a7f-4ea3-bc1e-395c719e5a16_vehicle.jpg
+2026-02-05 02:56:43 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 3 damages found
+2026-02-05 02:56:43 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 3 damages found
+2026-02-05 02:56:43 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 02:56:43 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/88c5a101-3a7f-4ea3-bc1e-395c719e5a16_invoice.png
+2026-02-05 02:56:43 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/88c5a101-3a7f-4ea3-bc1e-395c719e5a16_invoice.png
+2026-02-05 02:56:43 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:56:43 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 02:56:43 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 02:56:43 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 02:56:43 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 02:56:44 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 02:56:44 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 02:56:44 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 02:56:44 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 02:56:44 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 02:56:44 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 02:56:44 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 02:56:44 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 02:56:44 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 02:56:44 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.40
+2026-02-05 02:56:44 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 02:56:44 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 02:56:44 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 02:56:45 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 02:56:45 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 02:56:45 | INFO     | api.main:process_claim:234 - Claim 88c5a101-3a7f-4ea3-bc1e-395c719e5a16 processed successfully in 2.40s
+2026-02-05 02:58:31 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 02:58:31 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 02:58:31 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 02:58:31 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 02:58:31 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 02:58:31 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 02:58:31 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 02:58:31 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 02:58:31 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 02:58:31 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 03:00:19 | INFO     | api.main:process_claim:147 - Processing claim 7ffefd23-9640-44a1-b97d-5bc94ff18c6c
+2026-02-05 03:00:19 | INFO     | api.main:process_claim:174 - Received vehicle image: 000044.jpg (845334 bytes)
+2026-02-05 03:00:19 | INFO     | api.main:process_claim:189 - Received invoice image: Screenshot 2026-02-05 at 2.48.17 AM.png (154591 bytes)
+2026-02-05 03:00:19 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/7ffefd23-9640-44a1-b97d-5bc94ff18c6c_vehicle.jpg
+2026-02-05 03:00:19 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/7ffefd23-9640-44a1-b97d-5bc94ff18c6c_invoice.png
+2026-02-05 03:00:19 | INFO     | api.main:process_claim:216 - Executing claim processing graph for 7ffefd23-9640-44a1-b97d-5bc94ff18c6c
+2026-02-05 03:00:19 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 03:00:19 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/7ffefd23-9640-44a1-b97d-5bc94ff18c6c_vehicle.jpg
+2026-02-05 03:00:20 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 3 damages found
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 3 damages found
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 03:00:20 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/7ffefd23-9640-44a1-b97d-5bc94ff18c6c_invoice.png
+2026-02-05 03:00:20 | INFO     | tools.ocr_tool:extract_text:46 - Starting OCR extraction from: /tmp/claim_uploads/7ffefd23-9640-44a1-b97d-5bc94ff18c6c_invoice.png
+2026-02-05 03:00:20 | ERROR    | tools.ocr_tool:extract_text:90 - OCR extraction failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 03:00:20 | ERROR    | agents.ocr_structuring_agent:process:106 - OCR structuring failed: PaddleOCR.predict() got an unexpected keyword argument 'cls'
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹0.0, Confidence 0.00
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 03:00:20 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 03:00:20 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 03:00:20 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 03:00:20 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 03:00:20 | WARNING  | agents.policy_validation_agent:process:116 - Invoice amount missing; coverage undetermined
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 03:00:20 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 03:00:20 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 03:00:21 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.40
+2026-02-05 03:00:21 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 03:00:21 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 03:00:21 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 03:00:21 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 03:00:21 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 03:00:21 | INFO     | api.main:process_claim:246 - Claim 7ffefd23-9640-44a1-b97d-5bc94ff18c6c processed successfully in 2.03s
+2026-02-05 03:01:30 | INFO     | api.main:process_claim:147 - Processing claim 8745737e-f833-4959-b67b-518998396fee
+2026-02-05 03:01:30 | INFO     | api.main:process_claim:174 - Received vehicle image: 000042.jpg (674257 bytes)
+2026-02-05 03:01:30 | INFO     | api.main:process_claim:189 - Received invoice image: car_insurance_invoice_sample.pdf (2589 bytes)
+2026-02-05 03:01:30 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/8745737e-f833-4959-b67b-518998396fee_vehicle.jpg
+2026-02-05 03:01:30 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/8745737e-f833-4959-b67b-518998396fee_invoice.pdf
+2026-02-05 03:01:30 | INFO     | api.main:process_claim:216 - Executing claim processing graph for 8745737e-f833-4959-b67b-518998396fee
+2026-02-05 03:01:30 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 03:01:30 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/8745737e-f833-4959-b67b-518998396fee_vehicle.jpg
+2026-02-05 03:01:30 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 8 damages found
+2026-02-05 03:01:30 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 8 damages found
+2026-02-05 03:01:30 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 03:01:30 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/8745737e-f833-4959-b67b-518998396fee_invoice.pdf
+2026-02-05 03:01:31 | INFO     | tools.ocr_tool:extract_from_pdf:115 - Extracted text directly from PDF (no OCR needed)
+2026-02-05 03:01:31 | INFO     | agents.ocr_structuring_agent:process:68 - OCR completed with confidence: 0.90
+2026-02-05 03:01:31 | INFO     | agents.ocr_structuring_agent:process:78 - Structuring OCR text with LLM
+2026-02-05 03:01:31 | INFO     | agents.ocr_structuring_agent:process:93 - Invoice structured successfully. Amount: 18880.0, Confidence: 0.90
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹18880.0, Confidence 0.90
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 03:01:31 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 03:01:31 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 03:01:31 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: POL-2024-001
+2026-02-05 03:01:31 | INFO     | agents.policy_validation_agent:_get_policy_data:30 - Policy found: POL-2024-001
+2026-02-05 03:01:31 | INFO     | agents.policy_validation_agent:process:156 - Claim validated. Covered: True, Max payable: ₹13880.0
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 03:01:31 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 03:01:31 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.80
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 03:01:31 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 03:01:31 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 03:01:32 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 03:01:32 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 03:01:32 | INFO     | api.main:process_claim:246 - Claim 8745737e-f833-4959-b67b-518998396fee processed successfully in 2.53s
+2026-02-05 03:07:06 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 03:07:06 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 03:07:06 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 03:07:06 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 03:07:07 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 03:07:07 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 03:07:07 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 03:07:07 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 03:07:07 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 03:07:07 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 19:26:39 | INFO     | tools.ocr_tool:__init__:30 - OCR engine initialized successfully
+2026-02-05 19:26:39 | INFO     | agents.ocr_structuring_agent:__init__:47 - OCR Structuring Agent initialized
+2026-02-05 19:26:39 | INFO     | agents.claim_nlp_agent:__init__:40 - Claim NLP Agent initialized
+2026-02-05 19:26:39 | INFO     | agents.policy_validation_agent:__init__:23 - Policy Validation Agent initialized
+2026-02-05 19:26:39 | INFO     | agents.decision_agent:__init__:46 - Decision Agent initialized
+2026-02-05 19:26:39 | INFO     | agents.explanation_agent:__init__:46 - Explanation Agent initialized
+2026-02-05 19:26:39 | INFO     | graphs.claim_workflow:create_claim_processing_graph:439 - Claim processing graph compiled successfully
+2026-02-05 19:26:39 | INFO     | api.main:startup_event:46 - Starting Vehicle Insurance Claims Processing API
+2026-02-05 19:26:39 | INFO     | api.main:startup_event:47 - Using LLM: llama-3.3-70b-versatile
+2026-02-05 19:26:39 | INFO     | api.main:startup_event:48 - Damage Detection Service: http://127.0.0.1:8000
+2026-02-05 20:27:17 | INFO     | api.main:process_claim:147 - Processing claim 8cdfca1f-0a4b-44d1-8560-fb74b41b1f63
+2026-02-05 20:27:17 | INFO     | api.main:process_claim:174 - Received vehicle image: 000128.jpg (971981 bytes)
+2026-02-05 20:27:17 | INFO     | api.main:process_claim:189 - Received invoice image: car_insurance_invoice_sample.pdf (2589 bytes)
+2026-02-05 20:27:17 | INFO     | api.main:save_upload_file:107 - Saved vehicle file: /tmp/claim_uploads/8cdfca1f-0a4b-44d1-8560-fb74b41b1f63_vehicle.jpg
+2026-02-05 20:27:17 | INFO     | api.main:save_upload_file:107 - Saved invoice file: /tmp/claim_uploads/8cdfca1f-0a4b-44d1-8560-fb74b41b1f63_invoice.pdf
+2026-02-05 20:27:17 | INFO     | api.main:process_claim:216 - Executing claim processing graph for 8cdfca1f-0a4b-44d1-8560-fb74b41b1f63
+2026-02-05 20:27:17 | INFO     | graphs.claim_workflow:damage_analysis_node:120 - Executing damage_analysis_node
+2026-02-05 20:27:17 | INFO     | tools.damage_detection_client:analyze_damage:28 - Calling damage detection API for: /tmp/claim_uploads/8cdfca1f-0a4b-44d1-8560-fb74b41b1f63_vehicle.jpg
+2026-02-05 20:27:19 | INFO     | tools.damage_detection_client:analyze_damage:64 - Damage detection completed: 3 damages found
+2026-02-05 20:27:19 | INFO     | graphs.claim_workflow:damage_analysis_node:134 - Damage analysis complete: 3 damages found
+2026-02-05 20:27:19 | INFO     | graphs.claim_workflow:ocr_structuring_node:149 - Executing ocr_structuring_node
+2026-02-05 20:27:19 | INFO     | agents.ocr_structuring_agent:process:60 - Processing invoice: /tmp/claim_uploads/8cdfca1f-0a4b-44d1-8560-fb74b41b1f63_invoice.pdf
+2026-02-05 20:27:20 | INFO     | tools.ocr_tool:extract_from_pdf:115 - Extracted text directly from PDF (no OCR needed)
+2026-02-05 20:27:20 | INFO     | agents.ocr_structuring_agent:process:68 - OCR completed with confidence: 0.90
+2026-02-05 20:27:20 | INFO     | agents.ocr_structuring_agent:process:78 - Structuring OCR text with LLM
+2026-02-05 20:27:20 | INFO     | agents.ocr_structuring_agent:process:93 - Invoice structured successfully. Amount: 18880.0, Confidence: 0.90
+2026-02-05 20:27:20 | INFO     | graphs.claim_workflow:ocr_structuring_node:165 - Invoice structured: Amount ₹18880.0, Confidence 0.90
+2026-02-05 20:27:20 | INFO     | graphs.claim_workflow:claim_nlp_node:181 - Executing claim_nlp_node
+2026-02-05 20:27:20 | INFO     | agents.claim_nlp_agent:process:53 - Processing claim description with NLP
+2026-02-05 20:27:21 | INFO     | agents.claim_nlp_agent:process:63 - Claim NLP completed. Incident type: IncidentType.COLLISION
+2026-02-05 20:27:21 | INFO     | graphs.claim_workflow:claim_nlp_node:193 - Claim parsed: Type IncidentType.COLLISION
+2026-02-05 20:27:21 | INFO     | graphs.claim_workflow:policy_validation_node:209 - Executing policy_validation_node
+2026-02-05 20:27:21 | INFO     | agents.policy_validation_agent:process:86 - Validating claim against policy: DEFAULT
+2026-02-05 20:27:21 | INFO     | agents.policy_validation_agent:process:156 - Claim validated. Covered: True, Max payable: ₹13880.0
+2026-02-05 20:27:21 | INFO     | graphs.claim_workflow:policy_validation_node:242 - Policy validation complete: Covered=True
+2026-02-05 20:27:21 | INFO     | graphs.claim_workflow:decision_node:259 - Executing decision_node
+2026-02-05 20:27:21 | INFO     | agents.decision_agent:process:74 - Making claim decision
+2026-02-05 20:27:21 | INFO     | agents.decision_agent:process:95 - Decision made: DecisionType.REVIEW_REQUIRED with confidence 0.80
+2026-02-05 20:27:21 | INFO     | graphs.claim_workflow:decision_node:301 - Decision made: DecisionType.REVIEW_REQUIRED
+2026-02-05 20:27:21 | INFO     | graphs.claim_workflow:explanation_node:319 - Executing explanation_node
+2026-02-05 20:27:21 | INFO     | agents.explanation_agent:process:76 - Generating claim explanations
+2026-02-05 20:27:22 | INFO     | agents.explanation_agent:process:99 - Explanations generated successfully
+2026-02-05 20:27:22 | INFO     | graphs.claim_workflow:explanation_node:364 - Explanations generated
+2026-02-05 20:27:22 | INFO     | api.main:process_claim:246 - Claim 8cdfca1f-0a4b-44d1-8560-fb74b41b1f63 processed successfully in 4.89s
