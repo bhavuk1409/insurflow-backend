@@ -30,7 +30,7 @@ class DamageDetectionClient:
                 with open(image_path, 'rb') as f:
                     files = {'file': (image_path.split('/')[-1], f, 'image/jpeg')}
                     response = await client.post(
-                        f"{self.base_url}/detect",
+                        f"{self.base_url}/predict",
                         files=files
                     )
                     response.raise_for_status()
