@@ -8,6 +8,7 @@ Production-ready multi-agent GenAI system for end-to-end vehicle insurance claim
 
 This system processes vehicle insurance claims automatically through a sophisticated multi-agent pipeline:
 
+
 1. **Vehicle Damage Analysis** - YOLOv8-based damage detection (existing service)
 2. **Invoice OCR & Structuring** - PaddleOCR + LLM for invoice data extraction
 3. **Claim NLP** - LLM-based parsing of claim descriptions
