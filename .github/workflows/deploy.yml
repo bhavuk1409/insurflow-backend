@@ -40,14 +40,17 @@ jobs:
           script: |
             set -e
 
+            echo "🧹 Cleaning Docker to free space..."
+            docker system prune -a -f || true
+
             echo "📦 Pulling latest image..."
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/insurflow-backend:latest
 
-            echo "🧹 Cleaning old container..."
+            echo "🛑 Stopping old container..."
             docker stop fastapi-app || true
             docker rm fastapi-app || true
 
-            echo "🚀 Starting new container..."
+            echo "🚀 Starting new container (AUTO-START ENABLED)..."
             docker run -d \
               --name fastapi-app \
               -p 8001:8001 \
