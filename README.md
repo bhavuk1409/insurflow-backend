@@ -1,4 +1,4 @@
-# InsurFlow — Vehicle Insurance Claims Processing AI
+# Vehicle Insurance Claims Processing AI
 
 A multi-agent **LangGraph** pipeline that takes a raw claim (photo + invoice +
 free-text description) and turns it into a structured, explainable decision —
